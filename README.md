@@ -40,19 +40,19 @@ y[n] = A + w[n], \qquad w[n] \sim \mathcal{N}(0,\sigma^2)
 $$
 
 Estimator:
-\[
+$$
 \hat{A} = \frac{1}{N}\sum_{n=0}^{N-1} y[n]
-\]
+$$
 
 CRLB:
-\[
+$$
 \mathrm{Var}(\hat{A}) \ge \frac{\sigma^2}{N}
-\]
+$$
 
 ### **Functionality of Q1a.py**
 - Generates noisy measurements of a constant \(A\)  
-- Computes the empirical MSE of \(\hat{A}\)  
-- Computes the theoretical CRLB (\(\sigma^2 / N\))  
+- Computes the empirical MSE of $$ \(\hat{A}\)  $$
+- Computes the theoretical CRLB $$(\(\sigma^2 / N\))$$  
 - Evaluates estimator performance over multiple sample sizes  
 - Produces a log–log plot comparing MSE and CRLB  
 
@@ -67,37 +67,37 @@ The sample mean reaches the CRLB, confirming it is:
 ## 🔹 Problem 1(b): Estimation with Correlated Gaussian Noise
 
 ### **Model**
-\[
+$$
 y[n] = \mu + w[n], \qquad 
 \mathbf{w} \sim \mathcal{N}(0,\Sigma)
-\]
-\[
+$$
+$$
 \Sigma[n,m] = \sigma^2 \rho^{|n-m|}
-\]
+$$
 
 ### **Estimators Compared**
 1. **Sample Mean**
-   \[
+   $$
    \hat{\mu}_{SM} = \frac{1}{N}\sum y[n]
-   \]
+   $$
 
 2. **GLS (Generalized Least Squares) Estimator**
-   \[
+   $$
    \hat{\mu}_{GLS}
     = \frac{\mathbf{1}^T \Sigma^{-1} \mathbf{y}}
            {\mathbf{1}^T \Sigma^{-1} \mathbf{1}}
-   \]
+   $$
 
 ### **CRLB**
-\[
+$$
 \mathrm{Var}(\hat{\mu}) \ge 
 \left( \mathbf{1}^T \Sigma^{-1} \mathbf{1} \right)^{-1}
-\]
+$$
 
 ### **Functionality of Q1b.py**
 - Builds a Toeplitz covariance structure  
 - Generates correlated Gaussian noise  
-- Computes both \(\hat{\mu}_{SM}\) and \(\hat{\mu}_{GLS}\)  
+- Computes both $$\(\hat{\mu}_{SM}\) and \(\hat{\mu}_{GLS}\)  $$
 - Computes empirical variances from Monte-Carlo trials  
 - Plots histograms of their distributions  
 - Compares both MSEs to the CRLB  
@@ -116,22 +116,22 @@ This highlights that **“unbiased” does not imply “optimal.”**
 
 ### **Two Estimators**
 1. **Sample Mean**
-   \[
+   $$
    \hat{A}_{mean} = \frac{1}{N}\sum y[n]
-   \]
+   $$
 
 2. **First Sample**
-   \[
+   $$
    \hat{A}_{single} = y[1]
-   \]
+   $$
 
 ### **Variances**
-\[
+$$
 \mathrm{Var}(\hat{A}_{mean}) = \frac{\sigma^2}{N}
-\]
-\[
+$$
+$$
 \mathrm{Var}(\hat{A}_{single}) = \sigma^2
-\]
+$$
 
 ### **Functionality of Q1c.py**
 - Runs many Monte-Carlo trials  
@@ -149,16 +149,16 @@ This highlights that **“unbiased” does not imply “optimal.”**
 
 In this problem, the observation model is a **linear Gaussian system**:
 
-\[
+$$
 \mathbf{y} = H\boldsymbol{\theta} + \mathbf{s} + \mathbf{w},
-\]
+$$
 
 where:
 
-- \( H \) is a known \( N \times p \) observation matrix  
-- \( \boldsymbol{\theta} \) is an unknown parameter vector of size \( p \times 1 \)  
-- \( \mathbf{s} \) is a known deterministic signal  
-- \( \mathbf{w} \sim \mathcal{N}(0, C) \) is Gaussian noise with known covariance \( C \)
+- $$ \( H \) is a known \( N \times p \) $$ observation matrix  
+- $$\( \boldsymbol{\theta} \)$$ is an unknown parameter vector of size $$\( p \times 1 \)$$  
+- $$\( \mathbf{s} \)$$ is a known deterministic signal  
+- $$\( \mathbf{w} \sim \mathcal{N}(0, C) \)$$ is Gaussian noise with known covariance $$\( C \)$$
 
 This represents a **multiple-parameter estimation** problem in the presence of correlated noise.
 
