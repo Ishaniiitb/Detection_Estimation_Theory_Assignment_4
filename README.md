@@ -35,9 +35,9 @@ Detection_Estimation_Theory_Assignment_4/
 ## 🔹 Problem 1(a): DC Estimation with i.i.d. Gaussian Noise
 
 ### **Model**
-\[
+$$
 y[n] = A + w[n], \qquad w[n] \sim \mathcal{N}(0,\sigma^2)
-\]
+$$
 
 Estimator:
 \[
